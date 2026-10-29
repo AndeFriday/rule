@@ -57,6 +57,12 @@
         "action": "reject"
       },
       {
+        "domain_keyword": [
+          "mcdn.bilivideo"
+        ],
+        "action": "reject"
+      },
+      {
         "preferred_by": "mdns",
         "server": "mdns"
       },
@@ -72,6 +78,7 @@
         "rule_set": [
           "fakeipfilter-cn",
           "geosite-cn",
+          "geosite-bilibili",
           "geosite-microsoft@cn",
           "geosite-apple@cn",
           "geosite-private",
@@ -150,6 +157,25 @@
         "狮城自动",
         "狮城手动",
         "香港手动",
+        "美国手动",
+        "塔菲美国",
+        "塔菲狮城",
+        "塔菲欧洲",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "AI中转",
+      "type": "selector",
+      "outbounds": [
+        "直连",
+        "默认代理",
+        "AI",
+        "香港手动",
+        "日本手动",
+        "狮城自动",
+        "狮城手动",
         "美国手动",
         "塔菲美国",
         "塔菲狮城",
@@ -431,6 +457,7 @@
         "塔菲狮城",
         "塔菲欧洲",
         "AI",
+        "AI中转",
         "YouTube",
         "Google",
         "Github",
@@ -554,6 +581,13 @@
         "no_drop": true
       },
       {
+        "domain_keyword": [
+          "mcdn.bilivideo"
+        ],
+        "action": "reject",
+        "no_drop": true
+      },
+      {
         "network": "icmp",
         "action": "resolve"
       },
@@ -576,6 +610,12 @@
       {
         "rule_set": "geosite-category-pt",
         "outbound": "直连"
+      },
+      {
+        "domain_suffix": [
+          "anyrouter.top"
+        ],
+        "outbound": "AI中转"
       },
       {
         "rule_set": "geosite-category-ai-!cn",
@@ -650,6 +690,14 @@
         "outbound": "Steam"
       },
       {
+        "rule_set": "geosite-bilibili",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "outbound": "直连"
+      },
+      {
         "rule_set": "geosite-geolocation-!cn",
         "outbound": "默认代理"
       },
@@ -696,6 +744,7 @@
           "geosite-category-cryptocurrency",
           "geosite-steam@cn",
           "geosite-steam",
+          "geosite-bilibili",
           "geosite-geolocation-!cn",
           "geosite-cn",
           "geosite-private",
